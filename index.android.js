@@ -98,3 +98,4 @@ export default class LinearGradient extends Component<Props> {
       </View>
     );
   }
+}
