@@ -3,7 +3,7 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { processColor, StyleSheet, View } from 'react-native';
+import { processColor, StyleSheet, View, StatusBar } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 
 import NativeLinearGradient, { type Props } from './common';
@@ -84,7 +84,7 @@ export default class LinearGradient extends Component<Props> {
     return (
       <View ref={(component) => { this.gradientRef = component; }} {...otherProps} style={style}>
         <NativeLinearGradient
-          style={{position: 'absolute', top: 0, left: 0, right: 0, height:responsiveHeight(100)}}
+          style={{position: 'absolute', top: 0, left: 0, right: 0, height:responsiveHeight(100) + StatusBar.currentHeight}}
           colors={colors.map(processColor)}
           startPoint={convertPoint('start', start)}
           endPoint={convertPoint('end', end)}
